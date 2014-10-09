@@ -112,9 +112,9 @@ Now we are ready to build a http request with all the headers and parameters req
 
 ## Trading API
 
-Trading API covers all order placement and trade management.
+Trading API covers all order placement and trade management. all trading apis require authentication.
 
-## Create an order
+### Create an order
 path: /order/create
 
 http post
@@ -135,7 +135,7 @@ sample error response
 {"success":false,"errorCode":3,"errorMessage":"Invalid argument.","id":0,"clientRequestId":"abc-cdf-1000"}
 ```
 
-## Cancel an order
+### Cancel an order
 path: /order/cancel
 
 http post
@@ -151,7 +151,7 @@ sample response:
 {"success":true,"errorCode":null,"errorMessage":null,"responses":[{"success":false,"errorCode":3,"errorMessage":"order does not exist.","id":6840125478}]}
 ```
 
-## Order history
+### Order history
 path: /order/history
 
 http post
@@ -168,7 +168,7 @@ sample response:
 {"success":true,"errorCode":null,"errorMessage":null,"orders":[{"id":1003245675,"currency":"ZAR","instrument":"BTC","orderSide":"Bid","ordertype":"Limit","creationTime":1378862733366,"status":"Placed","errorMessage":null,"price":13000000000,"volume":10000000,"openVolume":10000000,"clientRequestId":null,"trades":[]},{"id":4345675,"currency":"ZAR","instrument":"BTC","orderSide":"Ask","ordertype":"Limit","creationTime":1378636912705,"status":"Fully Matched","errorMessage":null,"price":13000000000,"volume":10000000,"openVolume":0,"clientRequestId":null,"trades":[{"id":5345677,"creationTime":1378636913151,"description":null,"price":13000000000,"volume":10000000,"fee":100000}]}]}
 ```
 
-## Open Orders
+### Open Orders
 path: /order/open
 
 http post
@@ -176,7 +176,7 @@ http post
 This is similar to the order history request and response. The only difference is that this method only returns open orders. 
 
 
-## Trade History
+### Trade History
 path: /order/trade/history
 
 http post
@@ -187,7 +187,7 @@ sample request:
 {"currency":"ZAR","instrument":"BTC","limit":10,"since":33434568724}
 ```
 
-## Order detail
+### Order detail
 path: /order/detail
 
 http post
